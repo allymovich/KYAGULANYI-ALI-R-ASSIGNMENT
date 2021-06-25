@@ -1,0 +1,1150 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={R markdown assignment},
+  pdfauthor={Kyagulanyi Ali},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{R markdown assignment}
+\author{Kyagulanyi Ali}
+\date{6/25/2021}
+
+\begin{document}
+\maketitle
+
+\hypertarget{question-1}{%
+\section{Question 1}\label{question-1}}
+
+Import the data described above into R, provide descriptive summaries of
+the subject data (using appropriate graphics and statistical summary
+measures) given in the diabimmune\_16s\_t1d\_metadata.csv file. In
+addition, use appropriate test(s) to check for association/independency
+between disease status and other variables (delivery mode, gender and
+age). Note that age is given in days.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Load the required packages}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages --------------------------------------- tidyverse 1.3.1 --
+\end{verbatim}
+
+\begin{verbatim}
+## v ggplot2 3.3.3     v purrr   0.3.4
+## v tibble  3.1.2     v dplyr   1.0.6
+## v tidyr   1.1.3     v stringr 1.4.0
+## v readr   1.4.0     v forcats 0.5.1
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(phyloseq)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sample\_metadata }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"diabimmune\_16s\_t1d\_metadata (1).csv"}\NormalTok{, }\AttributeTok{sep =} \StringTok{","}\NormalTok{, }\AttributeTok{header =}\NormalTok{ T) }\CommentTok{\# import sample data}
+\CommentTok{\# Explore the data and have a glimpse of it}
+\FunctionTok{head}\NormalTok{(sample\_metadata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   ï..Sample_ID Subject_ID Case_Control Gender Delivery_Route Age_at_Collection
+## 1       G36449    E001463      control   male        vaginal                62
+## 2       G36034    E001463      control   male        vaginal                82
+## 3       G36993    E001463      control   male        vaginal               124
+## 4       G35523    E001463      control   male        vaginal               153
+## 5       G36450    E001463      control   male        vaginal               187
+## 6       G36028    E001463      control   male        vaginal               213
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{tail}\NormalTok{(sample\_metadata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     ï..Sample_ID Subject_ID Case_Control Gender Delivery_Route
+## 772       G36938    T026177      control female        vaginal
+## 773       G36936    T026177      control female        vaginal
+## 774       G36937    T026177      control female        vaginal
+## 775       G35535    T026177      control female        vaginal
+## 776       G35536    T026177      control female        vaginal
+## 777       G35537    T026177      control female        vaginal
+##     Age_at_Collection
+## 772               570
+## 773               592
+## 774               646
+## 775               677
+## 776               703
+## 777               729
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{dim}\NormalTok{(sample\_metadata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 777   6
+\end{verbatim}
+
+\hypertarget{how-many-were-cases-and-controls}{%
+\subsection{How many were cases and
+controls}\label{how-many-were-cases-and-controls}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{case\_control\_count }\OtherTok{\textless{}{-}}\NormalTok{ sample\_metadata }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Case\_Control) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Total =} \FunctionTok{n}\NormalTok{(), }\AttributeTok{Percentage =}\NormalTok{ (Total }\SpecialCharTok{/} \DecValTok{777}\NormalTok{) }\SpecialCharTok{*} \DecValTok{100}\NormalTok{)}
+\NormalTok{case\_control\_count}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 3
+##   Case_Control Total Percentage
+##   <chr>        <int>      <dbl>
+## 1 case           260       33.5
+## 2 control        517       66.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(case\_control\_count, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Case\_Control, }\AttributeTok{y =}\NormalTok{ Total, }\AttributeTok{fill =}\NormalTok{ Case\_Control)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{width =} \FloatTok{0.7}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{panel.grid.major =} \FunctionTok{element\_blank}\NormalTok{(), }\AttributeTok{panel.grid.minor =} \FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{panel.background =} \FunctionTok{element\_blank}\NormalTok{(), }\AttributeTok{axis.line =} \FunctionTok{element\_line}\NormalTok{(}\AttributeTok{colour =} \StringTok{"black"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Rmarkdown-code-assignment_files/figure-latex/sub-section 1-1.pdf}
+
+\hypertarget{how-many-were-males-and-females}{%
+\subsection{How many were males and
+females}\label{how-many-were-males-and-females}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gender\_counts }\OtherTok{\textless{}{-}}\NormalTok{ sample\_metadata }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Gender) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Total =} \FunctionTok{n}\NormalTok{(), }\AttributeTok{Percentage =}\NormalTok{ (Total }\SpecialCharTok{/} \DecValTok{777}\NormalTok{) }\SpecialCharTok{*} \DecValTok{100}\NormalTok{)}
+\NormalTok{gender\_counts}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 3
+##   Gender Total Percentage
+##   <chr>  <int>      <dbl>
+## 1 female   412       53.0
+## 2 male     365       47.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(gender\_counts, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Gender, }\AttributeTok{y =}\NormalTok{ Total, }\AttributeTok{fill =}\NormalTok{ Gender)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{width =} \FloatTok{0.7}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{panel.grid.major =} \FunctionTok{element\_blank}\NormalTok{(), }\AttributeTok{panel.grid.minor =} \FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{panel.background =} \FunctionTok{element\_blank}\NormalTok{(), }\AttributeTok{axis.line =} \FunctionTok{element\_line}\NormalTok{(}\AttributeTok{colour =} \StringTok{"black"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Rmarkdown-code-assignment_files/figure-latex/sub-section 2-1.pdf}
+
+\hypertarget{how-many-fall-into-each-delivery-route}{%
+\subsection{How many fall into each delivery
+route}\label{how-many-fall-into-each-delivery-route}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{delivery\_route\_count }\OtherTok{\textless{}{-}}\NormalTok{ sample\_metadata }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Delivery\_Route) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Total =} \FunctionTok{n}\NormalTok{(), }\AttributeTok{Percentage =}\NormalTok{ (Total }\SpecialCharTok{/} \FunctionTok{nrow}\NormalTok{(sample\_metadata)) }\SpecialCharTok{*} \DecValTok{100}\NormalTok{)}
+\NormalTok{delivery\_route\_count}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 3
+##   Delivery_Route Total Percentage
+##   <chr>          <int>      <dbl>
+## 1 cesarian          66       8.49
+## 2 vaginal          711      91.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(delivery\_route\_count, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Delivery\_Route, }\AttributeTok{y =}\NormalTok{ Total, }\AttributeTok{fill =}\NormalTok{ Delivery\_Route)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{width =} \FloatTok{0.7}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{panel.grid.major =} \FunctionTok{element\_blank}\NormalTok{(), }\AttributeTok{panel.grid.minor =} \FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{panel.background =} \FunctionTok{element\_blank}\NormalTok{(), }\AttributeTok{axis.line =} \FunctionTok{element\_line}\NormalTok{(}\AttributeTok{colour =} \StringTok{"black"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Rmarkdown-code-assignment_files/figure-latex/sub-section 3-1.pdf}
+
+\hypertarget{cases-and-controls-versus-gender}{%
+\subsection{Cases and controls versus
+gender}\label{cases-and-controls-versus-gender}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{status\_gender }\OtherTok{\textless{}{-}}\NormalTok{ sample\_metadata }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Gender, Case\_Control) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Total =} \FunctionTok{n}\NormalTok{(), }\AttributeTok{Percentage =}\NormalTok{ (Total }\SpecialCharTok{/} \FunctionTok{nrow}\NormalTok{(sample\_metadata)) }\SpecialCharTok{*} \DecValTok{100}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` has grouped output by 'Gender'. You can override using the `.groups` argument.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{status\_gender}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 4 x 4
+## # Groups:   Gender [2]
+##   Gender Case_Control Total Percentage
+##   <chr>  <chr>        <int>      <dbl>
+## 1 female case           142       18.3
+## 2 female control        270       34.7
+## 3 male   case           118       15.2
+## 4 male   control        247       31.8
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(status\_gender, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill=}\NormalTok{Gender, }\AttributeTok{y=}\NormalTok{Total, }\AttributeTok{x=}\NormalTok{Case\_Control)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position=}\StringTok{"dodge"}\NormalTok{, }\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{panel.grid.major =} \FunctionTok{element\_blank}\NormalTok{(), }\AttributeTok{panel.grid.minor =} \FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{panel.background =} \FunctionTok{element\_blank}\NormalTok{(), }\AttributeTok{axis.line =} \FunctionTok{element\_line}\NormalTok{(}\AttributeTok{colour =} \StringTok{"black"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Rmarkdown-code-assignment_files/figure-latex/sub-section 4-1.pdf}
+
+\hypertarget{relationship-between-status-and-gender}{%
+\subsubsection{Relationship between status and
+gender}\label{relationship-between-status-and-gender}}
+
+Here we use the chi-square test to determine whether the status and
+gender are independent or dependent of each other.
+
+Null hypothesis: Status and gender are independent
+
+Alternate hypothesis: Status and gender relate to each other Note: We
+set our significance level at 0.05. So, if we get a p-value less than
+0.05, we shall reject the null hypothesis, otherwise, we fail to reject
+it.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{female }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{142}\NormalTok{, }\DecValTok{270}\NormalTok{)}
+\NormalTok{male }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{118}\NormalTok{, }\DecValTok{247}\NormalTok{)}
+\NormalTok{gen\_mat }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(female, male)}
+\FunctionTok{row.names}\NormalTok{(gen\_mat) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"case"}\NormalTok{, }\StringTok{"control"}\NormalTok{)}
+\FunctionTok{chisq.test}\NormalTok{(gen\_mat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Pearson's Chi-squared test with Yates' continuity correction
+## 
+## data:  gen_mat
+## X-squared = 0.30687, df = 1, p-value = 0.5796
+\end{verbatim}
+
+Since P-value is greater than 0.05 - our significance level, we fail to
+reject the null hypothesis and conclude that status and gender are
+related
+
+\hypertarget{cases-and-controls-versus-delivery-route}{%
+\subsection{Cases and controls versus delivery
+route}\label{cases-and-controls-versus-delivery-route}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{status\_route }\OtherTok{\textless{}{-}}\NormalTok{ sample\_metadata }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Case\_Control, Delivery\_Route) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Total =} \FunctionTok{n}\NormalTok{(), }\AttributeTok{Percentage =}\NormalTok{ (Total }\SpecialCharTok{/} \FunctionTok{nrow}\NormalTok{(sample\_metadata)) }\SpecialCharTok{*} \DecValTok{100}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` has grouped output by 'Case_Control'. You can override using the `.groups` argument.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{status\_route}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 3 x 4
+## # Groups:   Case_Control [2]
+##   Case_Control Delivery_Route Total Percentage
+##   <chr>        <chr>          <int>      <dbl>
+## 1 case         vaginal          260      33.5 
+## 2 control      cesarian          66       8.49
+## 3 control      vaginal          451      58.0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(status\_route, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill=}\NormalTok{Delivery\_Route, }\AttributeTok{y=}\NormalTok{Total, }\AttributeTok{x=}\NormalTok{Case\_Control)) }\SpecialCharTok{+} 
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position=}\StringTok{"dodge"}\NormalTok{, }\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{panel.grid.major =} \FunctionTok{element\_blank}\NormalTok{(), }\AttributeTok{panel.grid.minor =} \FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{panel.background =} \FunctionTok{element\_blank}\NormalTok{(), }\AttributeTok{axis.line =} \FunctionTok{element\_line}\NormalTok{(}\AttributeTok{colour =} \StringTok{"black"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Rmarkdown-code-assignment_files/figure-latex/sub2-1.pdf}
+
+\hypertarget{relationship-between-status-and-delivery-route}{%
+\subsubsection{Relationship between status and delivery
+route}\label{relationship-between-status-and-delivery-route}}
+
+Here we use the chi-square test to determine whether the status and
+delivery routes are independent or dependent of each other.
+
+Null hypothesis: Status and delivery route are independent
+
+Alternate hypothesis: Status and delivery route relate to each other
+Note: We set our significance level at 0.05. So, if we get a p-value
+less than 0.05, we shall reject the null hypothesis, otherwise, we fail
+to reject it.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vaginal }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{260}\NormalTok{, }\DecValTok{451}\NormalTok{)}
+\NormalTok{cesarian }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{66}\NormalTok{)}
+\NormalTok{del\_mat }\OtherTok{\textless{}{-}} \FunctionTok{cbind}\NormalTok{(vaginal, cesarian)}
+\FunctionTok{row.names}\NormalTok{(del\_mat) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"case"}\NormalTok{, }\StringTok{"control"}\NormalTok{)}
+\FunctionTok{chisq.test}\NormalTok{(del\_mat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##  Pearson's Chi-squared test with Yates' continuity correction
+## 
+## data:  del_mat
+## X-squared = 34.649, df = 1, p-value = 3.949e-09
+\end{verbatim}
+
+Since P-value is less than 0.05 - our significance level, we reject the
+null hypothesis and conclude that status and delivery route are
+independent of each other
+
+\hypertarget{cases-and-controls-gender-plus-delivery-route}{%
+\subsection{Cases and controls, gender plus delivery
+route}\label{cases-and-controls-gender-plus-delivery-route}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{status\_gender\_delivery }\OtherTok{\textless{}{-}}\NormalTok{ sample\_metadata }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{group\_by}\NormalTok{(Gender, Case\_Control, Delivery\_Route) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{summarise}\NormalTok{(}\AttributeTok{Total =} \FunctionTok{n}\NormalTok{(), }\AttributeTok{Percentage =}\NormalTok{ (Total }\SpecialCharTok{/} \FunctionTok{nrow}\NormalTok{(sample\_metadata)) }\SpecialCharTok{*} \DecValTok{100}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` has grouped output by 'Gender', 'Case_Control'. You can override using the `.groups` argument.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{status\_gender\_delivery}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 5
+## # Groups:   Gender, Case_Control [4]
+##   Gender Case_Control Delivery_Route Total Percentage
+##   <chr>  <chr>        <chr>          <int>      <dbl>
+## 1 female case         vaginal          142      18.3 
+## 2 female control      cesarian          38       4.89
+## 3 female control      vaginal          232      29.9 
+## 4 male   case         vaginal          118      15.2 
+## 5 male   control      cesarian          28       3.60
+## 6 male   control      vaginal          219      28.2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{ggplot}\NormalTok{(status\_gender\_delivery, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Gender, }\AttributeTok{y =}\NormalTok{ Total, }\AttributeTok{fill =}\NormalTok{ Delivery\_Route)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{position=}\StringTok{"dodge"}\NormalTok{, }\AttributeTok{stat=}\StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{panel.grid.major =} \FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{panel.grid.minor =} \FunctionTok{element\_blank}\NormalTok{(), }\AttributeTok{panel.background =} \FunctionTok{element\_blank}\NormalTok{(), }\AttributeTok{axis.line =}
+          \FunctionTok{element\_line}\NormalTok{(}\AttributeTok{colour =} \StringTok{"black"}\NormalTok{), }\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{45}\NormalTok{, }\AttributeTok{hjust =} \DecValTok{1}\NormalTok{))}
+\NormalTok{p }\SpecialCharTok{+} \FunctionTok{facet\_grid}\NormalTok{(. }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Case\_Control) }\SpecialCharTok{+} \FunctionTok{geom\_text}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{label =}\NormalTok{ Total), }\AttributeTok{vjust =} \SpecialCharTok{{-}}\FloatTok{0.1}\NormalTok{, }\AttributeTok{position =}
+      \FunctionTok{position\_dodge}\NormalTok{(}\AttributeTok{width =} \FloatTok{0.9}\NormalTok{)) }\SpecialCharTok{+}
+        \FunctionTok{labs}\NormalTok{(}\AttributeTok{x =} \StringTok{"Gender"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Rmarkdown-code-assignment_files/figure-latex/sub-section 5-1.pdf}
+\# Question 2 Using phyloseq, create a phyloseq object. This will
+comprise the OTU abundance, taxonomy (provided in the .txt file) and
+sample data (provided in the .csv file)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# import otu table}
+\NormalTok{otut }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\StringTok{"otu\_table"}\NormalTok{) }
+\FunctionTok{head}\NormalTok{(otut, }\AttributeTok{n =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         G37016 G36918 G37044 G37009 G37029 G37035 G36982 G36984 G37030 G37031
+## 4333897     12      1     12      0      0     22      0      0      0     35
+##         G36906 G37028 G37014 G37010 G36944 G36902 G37051 G36964 G36951 G37025
+## 4333897      1     27     36      4      1      0      3     24      0      0
+##         G36930 G36935 G37041 G36959 G36905 G36917 G36992 G36921 G37004 G36966
+## 4333897      0     43     29     14      1      2      3      2     14      5
+##         G36936 G37015 G37034 G36953 G36974 G37039 G36933 G37052 G36925 G37046
+## 4333897      0      0      0      0      0      0      3      0      1      4
+##         G37053 G36998 G37045 G37049 G37019 G36988 G37037 G37005 G36928 G36923
+## 4333897     39      0      5      8      1      7      7      4      3      0
+##         G37033 G37017 G37012 G36952 G37011 G36957 G37021 G36937 G37047 G37032
+## 4333897     35      1     14      0     19     26     23      1      0      7
+##         G36932 G37043 G37054 G36948 G36972 G36968 G36911 G36987 G37042 G36960
+## 4333897      6     38      0      4      0      1      0     11     17      1
+##         G37040 G37027 G37024 G37023 G37036 G37026 G37050 G36973 G36991 G36904
+## 4333897      0      1      0      8      4      5     17      0      1      0
+##         G36958 G36993 G37020 G36910 G36927 G37018 G37048 G36940 G37013 G37038
+## 4333897     32     10      0      0      0      0      0      4      0      7
+##         G36938 G37022 G35534 G35535 G35361 G35364 G35433 G35528 G35381 G35416
+## 4333897      0      8     34      0      0      2     30      7      3     13
+##         G35477 G35390 G35536 G35514 G35525 G35395 G35480 G35409 G35391 G35437
+## 4333897      1     56      0      0      9      3     18      0      0      4
+##         G35511 G35448 G35510 G35470 G35403 G35424 G35398 G35365 G35442 G35476
+## 4333897      1      3      0      1      9     21      8      3      4      0
+##         G35515 G35351 G35484 G35495 G35473 G35418 G35529 G35532 G35537 G35520
+## 4333897      0      2      0     16      0      0      1     64      1      0
+##         G35370 G35517 G35417 G35465 G35350 G35421 G35531 G35444 G35443 G35349
+## 4333897     60     17     17      1     38      0      2     40     17     10
+##         G35523 G35487 G35386 G35521 G35475 G35490 G35422 G35526 G35498 G35348
+## 4333897     26      1      0     11      0      7      1     27     16      0
+##         G35423 G35374 G35486 G35524 G35394 G35359 G35419 G35356 G35519 G35505
+## 4333897     42     24      3      9      4      1      0      0      1      4
+##         G35447 G35458 G35397 G35462 G35392 G35464 G35497 G35373 G35453 G35352
+## 4333897      0      0      0      0      1     21     25      4      1      9
+##         G35366 G35530 G35512 G35372 G35407 G35455 G35481 G35355 G35469 G35513
+## 4333897      5      7      0      7      0      0     11      6      0      0
+##         G35387 G35527 G35516 G35463 G35441 G35414 G35412 G35388 G35354 G35533
+## 4333897      0     20     57      1      9     27      8      1     51     14
+##         G35406 G35467 G35522 G35404 G35445 G36173 G36145 G36196 G36219 G36299
+## 4333897      0      0      6      1      7      0      3      7     80      0
+##         G36137 G36273 G36201 G36165 G36202 G36226 G36269 G36135 G36250 G36225
+## 4333897      0      4      0      8      0      0     10      0      0      0
+##         G36272 G36285 G36259 G36229 G36155 G36251 G36297 G36170 G36241 G36224
+## 4333897      0      0      9      0      0      0      0      1      0      3
+##         G36169 G36266 G36164 G36215 G36195 G36205 G36246 G36150 G36237 G36148
+## 4333897      0      0      2     62      0      1      0      0      5      0
+##         G36213 G36232 G36240 G36249 G36298 G36176 G36214 G36230 G36320 G36245
+## 4333897     17      3      0      1      0      0      6      0     12      1
+##         G36161 G36172 G36212 G36180 G36153 G36210 G36303 G36193 G36151 G36248
+## 4333897      2      4     12     39      0      6      0      3      0      0
+##         G36239 G36270 G36158 G36233 G36311 G36175 G36267 G36183 G36227 G36322
+## 4333897      0      0     80      0      0      0      1      0      0      0
+##         G36182 G36256 G36163 G36287 G36157 G36262 G36200 G36160 G36185 G36162
+## 4333897      0      0      2      0      0      5      0      1      0      0
+##         G36204 G36318 G36194 G36244 G36197 G36264 G36317 G36159 G36234 G36206
+## 4333897      0      0      1      0      2      0     12     36      0      0
+##         G36257 G36216 G36208 G36309 G36146 G36192 G36284 G36291 G36142 G36138
+## 4333897      1      0      0      0     17      5      5      0     12      2
+##         G36203 G36282 G36290 G36274 G36314 G36258 G36147 G36235 G36143 G36308
+## 4333897      5      0      0      3      1      0      0      0      1      0
+##         G36209 G36166 G36268 G36156 G36179 G36261 G36154 G36207 G36286 G36281
+## 4333897      9      0      4      0      2      5      0     23      0      0
+##         G36316 G36247 G36283 G36141 G36263 G36304 G36292 G36136 G36174 G36300
+## 4333897      0      0      0      2      1      0      0      3      0      0
+##         G36187 G36288 G36177 G36168 G36171 G36289 G36186 G36313 G36255 G36140
+## 4333897      0      0      1      0      0      0      0      0      0      0
+##         G36211 G36315 G36184 G36295 G36144 G36296 G36242 G36139 G36222 G36181
+## 4333897      0      0      4      6      4      0      0      0      0      0
+##         G36310 G36199 G36307 G36191 G36260 G36217 G36276 G36280 G36238 G36321
+## 4333897      0      1      9      0     66      0      0      0      0      0
+##         G36243 G36279 G36254 G36223 G36236 G36133 G36231 G36198 G36189 G36252
+## 4333897      0      0      0      0      0      2      0     79     22     14
+##         G36221 G36293 G36149 G36220 G36294 G36277 G36190 G36167 G36228 G36301
+## 4333897      0      7      0      0     16      0     29      0      0      0
+##         G36319 G36305 G36265 G36275 G36253 G36188 G36152 G36134 G36302 G36312
+## 4333897     23     11      0      2      4      3      5      2      5      0
+##         G36271 G36430 G36510 G36437 G36444 G36544 G36421 G36513 G36502 G36472
+## 4333897      0      7      9      0      1     14      0     82      0      0
+##         G36494 G36432 G36555 G36493 G36441 G36479 G36448 G36515 G36554 G36484
+## 4333897      8     10      3      1     11      0      0      0     10      1
+##         G36485 G36475 G36460 G36456 G36435 G36497 G36521 G36451 G36540 G36433
+## 4333897      0     23      0      0      9      0      0     30      0      9
+##         G36528 G36491 G36429 G36471 G36537 G36546 G36481 G36542 G36529 G36408
+## 4333897      2      6      3      8      0      0     11      0      0     29
+##         G36523 G36509 G36495 G36545 G36506 G36467 G36452 G36556 G36420 G36478
+## 4333897      0     43      0      2      1      5     19      0     28      0
+##         G36449 G36533 G36487 G36536 G36499 G36511 G36527 G36445 G36453 G36534
+## 4333897     33      1      0      1      3     10      0      0     12      0
+##         G36462 G36549 G36516 G36501 G36424 G36532 G36547 G36505 G36464 G36507
+## 4333897      0      0      0      0     16      0      0      0      0      8
+##         G36476 G36480 G36474 G36434 G36535 G36431 G36470 G36406 G36436 G36439
+## 4333897      2      0      0      8      0     46      1      0      0     15
+##         G36443 G36450 G36550 G36551 G36473 G36543 G36459 G36438 G36522 G36465
+## 4333897      0     10     14     12      2      2      0      0      0      9
+##         G36519 G36461 G36482 G36514 G36518 G36496 G36553 G36498 G36538 G36457
+## 4333897      0      8      0     11      0      2      0      0      0      0
+##         G36557 G36520 G36508 G36490 G36463 G36530 G36531 G36488 G36419 G36492
+## 4333897     11      0      7      6      0      3      2      0     22      0
+##         G36466 G36525 G36500 G36454 G36413 G36446 G36486 G36477 G36417 G36455
+## 4333897      1      9      0      0     13      0      0      0      0      2
+##         G36517 G36558 G36552 G36524 G36503 G36423 G36526 G36440 G36541 G36458
+## 4333897      0      7     70      4      0      0      0      1     42      0
+##         G36489 G36512 G36548 G36442 G36468 G36422 G36886 G36796 G36889 G36818
+## 4333897      0     20      1      2      0     16      6     59    116     37
+##         G36779 G36824 G36878 G36881 G36859 G36834 G36899 G36856 G36797 G36895
+## 4333897     30      8     26      0      2     90      2      0      1      0
+##         G36898 G36816 G36888 G36756 G36845 G36809 G36864 G36840 G36799 G36860
+## 4333897      0      1      0     23      4     97      0      0     16      1
+##         G36786 G36882 G36822 G36827 G36748 G36865 G36897 G36866 G36820 G36829
+## 4333897     29     30    108     55      9      4      0      0      4     74
+##         G36879 G36884 G36894 G36861 G36815 G36784 G36791 G36846 G36873 G36766
+## 4333897     84      1      3      1     23      3      8      3      4     51
+##         G36765 G36769 G36778 G36764 G36863 G36787 G36896 G36868 G36885 G36839
+## 4333897      0      2      7      4      1      2     12      3      9     20
+##         G36777 G36835 G36762 G36753 G36877 G36763 G36854 G36773 G36808 G36795
+## 4333897      8     40      0     23      1      1      0      2     10     14
+##         G36788 G36871 G36759 G36789 G36819 G36847 G36893 G36780 G36872 G36875
+## 4333897     12      0      0     18      2     46      0      0      3      0
+##         G36883 G36761 G36760 G36807 G36798 G36862 G36751 G36855 G36870 G36783
+## 4333897      1     26      3     23      0      2      3      1     19     13
+##         G36772 G36843 G36874 G36810 G36867 G36900 G36771 G36776 G36851 G36830
+## 4333897      0     35    213      7      4      1      5     10      0     11
+##         G36858 G36891 G36826 G36831 G36849 G36757 G36844 G36752 G36813 G36850
+## 4333897      1      5      1      0     12     17      0     15     16    153
+##         G36887 G36880 G36785 G36803 G36857 G36750 G36837 G36814 G36838 G36892
+## 4333897      0      4     12     34      0      0     18     20     24      1
+##         G36811 G36890 G36823 G36755 G36848 G35986 G35959 G35971 G36018 G36008
+## 4333897     15      0     46      2      1    114      0    118      2     26
+##         G35957 G35967 G35933 G36033 G35990 G35974 G35906 G35955 G36002 G36050
+## 4333897      0      0     21      1     22      1      0      0     25      0
+##         G36029 G35958 G36054 G36004 G35978 G36034 G35868 G36016 G36000 G36045
+## 4333897    203      0      2      1    124    213     41     10      1      3
+##         G35996 G35972 G35942 G36024 G36040 G35976 G36048 G35989 G35926 G36026
+## 4333897      8     48      0      0    144      3      0      0      2     85
+##         G35936 G35878 G35945 G36020 G36013 G35982 G35934 G35975 G35991 G35940
+## 4333897      7      6      2      0      6      0      6     26     47     41
+##         G36003 G36023 G36031 G36043 G35898 G35963 G35932 G35994 G36021 G35892
+## 4333897      0      0     49     29      1      3      8     32      0      2
+##         G36032 G36042 G35980 G35937 G35947 G35902 G35953 G35962 G35946 G35992
+## 4333897      0    132      2     19      7      0      0      0      7     19
+##         G35999 G35985 G35941 G35961 G35950 G36052 G36039 G36012 G36015 G35993
+## 4333897      0     58      0     17     56      0    163     34      9     82
+##         G35869 G35966 G35876 G36007 G36019 G36010 G35954 G36038 G35983 G36051
+## 4333897     35      4     12     60     12      5      0     37     31     24
+##         G36053 G36006 G35987 G35925 G36049 G36025 G35960 G36041 G35984 G35948
+## 4333897      1     22     22      2      0     31      9    180      1     11
+##         G36047 G35881 G36037 G35924 G35894 G35977 G35995 G36001 G36017 G35939
+## 4333897     51     57    162      8     18      0     51     51     12      2
+##         G36046 G35969 G35891 G36036 G35998 G35979 G35997 G35951 G35965 G35908
+## 4333897      1     45      0      9      1     23      1      1      0      0
+##         G36028 G35944 G36022 G35952 G36044 G35901 G35970 G35915 G36035 G35956
+## 4333897     54     30     18      1      1     24    106     15      0      2
+##         G35874 G35867 G36306 G35928 G36011 G36005 G35368 G35504 G35938 G35988
+## 4333897      1     53     42     96     22     45      4      4     58      0
+##         G35923 G35518 G35449 G35900 G36030 G35981 G35973
+## 4333897     10      4     43      0     32      3     36
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# import taxa table}
+\NormalTok{taxat }\OtherTok{\textless{}{-}} \FunctionTok{read.table}\NormalTok{(}\StringTok{"new\_taxa\_table"}\NormalTok{) }
+\FunctionTok{head}\NormalTok{(taxat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##               Domain.            Phylum.                  Class.
+## 4333897; k__Bacteria; p__Proteobacteria; c__Gammaproteobacteria;
+## 190162;  k__Bacteria;     p__Firmicutes;          c__Clostridia;
+## 134726;  k__Bacteria;     p__Firmicutes;             c__Bacilli;
+## 679245;  k__Bacteria;     p__Firmicutes;             c__Bacilli;
+## 289734;  k__Bacteria;     p__Firmicutes;          c__Clostridia;
+## 302049;  k__Bacteria;     p__Firmicutes;          c__Clostridia;
+##                         Order.                Family.            Genus. Species
+## 4333897; o__Enterobacteriales; f__Enterobacteriaceae;              g__;     s__
+## 190162;      o__Clostridiales;    f__Lachnospiraceae;       g__Blautia;     s__
+## 134726;    o__Lactobacillales;   f__Lactobacillaceae; g__Lactobacillus;     s__
+## 679245;    o__Lactobacillales;   f__Lactobacillaceae; g__Lactobacillus;     s__
+## 289734;      o__Clostridiales;    f__Lachnospiraceae;              g__;     s__
+## 302049;      o__Clostridiales;    f__Lachnospiraceae;       g__Blautia;     s__
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#dim(taxat)}
+\CommentTok{\#dim(otut)}
+\CommentTok{\#class(taxat)}
+\CommentTok{\#class(otut)}
+\CommentTok{\# convert the otu table into a matrix}
+\NormalTok{otut\_mat }\OtherTok{\textless{}{-}} \FunctionTok{as.matrix}\NormalTok{(otut) }
+\FunctionTok{class}\NormalTok{(otut\_mat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "matrix" "array"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# convert the taxa table into a matrix}
+\NormalTok{taxat\_mat }\OtherTok{\textless{}{-}} \FunctionTok{as.matrix}\NormalTok{(taxat) }
+\FunctionTok{class}\NormalTok{(taxat\_mat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "matrix" "array"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#head(taxat\_mat)}
+\CommentTok{\# remove ; from the columns of taxa table}
+\NormalTok{taxat\_mat\_sub }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{";"}\NormalTok{, }\StringTok{""}\NormalTok{, taxat\_mat) }
+\CommentTok{\#head(taxat\_mat\_sub)}
+\CommentTok{\# Our row names are ending with ; and this makes them different from the naming in the otu table}
+\CommentTok{\# so we need to remove the ;}
+\CommentTok{\# extract the rownames and store them in the mat\_names object}
+\NormalTok{mat\_names }\OtherTok{\textless{}{-}} \FunctionTok{row.names}\NormalTok{(taxat\_mat\_sub) }
+\CommentTok{\# remove ; from the mat\_names and store them to new\_naam}
+\NormalTok{new\_naam }\OtherTok{\textless{}{-}} \FunctionTok{gsub}\NormalTok{(}\StringTok{";"}\NormalTok{, }\StringTok{""}\NormalTok{, mat\_names)}
+\CommentTok{\#new\_naam}
+\CommentTok{\# now change the row names of taxat\_mat\_sub to the names in "new\_naam}
+\FunctionTok{row.names}\NormalTok{(taxat\_mat\_sub) }\OtherTok{\textless{}{-}}\NormalTok{ new\_naam }
+\FunctionTok{library}\NormalTok{(phyloseq)}
+\NormalTok{OTU }\OtherTok{\textless{}{-}} \FunctionTok{otu\_table}\NormalTok{(otut\_mat, }\AttributeTok{taxa\_are\_rows =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{TAX }\OtherTok{\textless{}{-}} \FunctionTok{tax\_table}\NormalTok{(taxat\_mat\_sub)}
+\CommentTok{\#OTU}
+\CommentTok{\#TAX}
+\NormalTok{?column\_to\_rownames}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## starting httpd help server ... done
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(}\StringTok{"phyloseq"}\NormalTok{)}
+\FunctionTok{head}\NormalTok{(sample\_metadata)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   ï..Sample_ID Subject_ID Case_Control Gender Delivery_Route Age_at_Collection
+## 1       G36449    E001463      control   male        vaginal                62
+## 2       G36034    E001463      control   male        vaginal                82
+## 3       G36993    E001463      control   male        vaginal               124
+## 4       G35523    E001463      control   male        vaginal               153
+## 5       G36450    E001463      control   male        vaginal               187
+## 6       G36028    E001463      control   male        vaginal               213
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{samp\_data }\OtherTok{\textless{}{-}} \FunctionTok{column\_to\_rownames}\NormalTok{(sample\_metadata, }\AttributeTok{var =} \StringTok{"ï..Sample\_ID"}\NormalTok{)}
+\NormalTok{samp\_data }\OtherTok{\textless{}{-}} \FunctionTok{sample\_data}\NormalTok{(samp\_data)}
+\NormalTok{physeq }\OtherTok{\textless{}{-}} \FunctionTok{phyloseq}\NormalTok{(OTU, TAX, samp\_data)}
+\NormalTok{physeq}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## phyloseq-class experiment-level object
+## otu_table()   OTU Table:         [ 2240 taxa and 777 samples ]
+## sample_data() Sample Data:       [ 777 samples by 5 sample variables ]
+## tax_table()   Taxonomy Table:    [ 2240 taxa by 7 taxonomic ranks ]
+\end{verbatim}
+
+\hypertarget{question-3}{%
+\section{Question 3}\label{question-3}}
+
+Generate Alpha diversity plots and ordination plots. Examine any
+observed patterns by delivery mode, gender and disease status.
+
+\hypertarget{alpha-diversity-comparing-the-gender-in-cases-and-controls}{%
+\subsection{Alpha diversity comparing the gender in cases and
+controls}\label{alpha-diversity-comparing-the-gender-in-cases-and-controls}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot\_richness}\NormalTok{(}\AttributeTok{physeq =}\NormalTok{ physeq, }\AttributeTok{x =} \StringTok{"Case\_Control"}\NormalTok{, }\AttributeTok{color =} \StringTok{"Gender"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Rmarkdown-code-assignment_files/figure-latex/subrt-1.pdf}
+
+\hypertarget{alpha-diversity-comparing-the-delivery-routes-in-cases-and-controls}{%
+\subsection{Alpha diversity comparing the delivery routes in cases and
+controls}\label{alpha-diversity-comparing-the-delivery-routes-in-cases-and-controls}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot\_richness}\NormalTok{(}\AttributeTok{physeq =}\NormalTok{ physeq, }\AttributeTok{x =} \StringTok{"Case\_Control"}\NormalTok{, }\AttributeTok{color =} \StringTok{"Delivery\_Route"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Rmarkdown-code-assignment_files/figure-latex/subrttt-1.pdf}
+\# Question 4 Perform differential abundance using DEseq2
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(DESeq2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: S4Vectors
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: stats4
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: BiocGenerics
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: parallel
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'BiocGenerics'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:parallel':
+## 
+##     clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+##     clusterExport, clusterMap, parApply, parCapply, parLapply,
+##     parLapplyLB, parRapply, parSapply, parSapplyLB
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:dplyr':
+## 
+##     combine, intersect, setdiff, union
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     IQR, mad, sd, var, xtabs
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     anyDuplicated, append, as.data.frame, basename, cbind, colnames,
+##     dirname, do.call, duplicated, eval, evalq, Filter, Find, get, grep,
+##     grepl, intersect, is.unsorted, lapply, Map, mapply, match, mget,
+##     order, paste, pmax, pmax.int, pmin, pmin.int, Position, rank,
+##     rbind, Reduce, rownames, sapply, setdiff, sort, table, tapply,
+##     union, unique, unsplit, which.max, which.min
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'S4Vectors'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:dplyr':
+## 
+##     first, rename
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:tidyr':
+## 
+##     expand
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     expand.grid, I, unname
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: IRanges
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'IRanges'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:phyloseq':
+## 
+##     distance
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:dplyr':
+## 
+##     collapse, desc, slice
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:purrr':
+## 
+##     reduce
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:grDevices':
+## 
+##     windows
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: GenomicRanges
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: GenomeInfoDb
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: SummarizedExperiment
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: MatrixGenerics
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: matrixStats
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'matrixStats'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:dplyr':
+## 
+##     count
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'MatrixGenerics'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:matrixStats':
+## 
+##     colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+##     colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+##     colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+##     colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+##     colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+##     colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+##     colWeightedMeans, colWeightedMedians, colWeightedSds,
+##     colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+##     rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+##     rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+##     rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+##     rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+##     rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+##     rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+##     rowWeightedSds, rowWeightedVars
+\end{verbatim}
+
+\begin{verbatim}
+## Loading required package: Biobase
+\end{verbatim}
+
+\begin{verbatim}
+## Welcome to Bioconductor
+## 
+##     Vignettes contain introductory material; view with
+##     'browseVignettes()'. To cite Bioconductor, see
+##     'citation("Biobase")', and for packages 'citation("pkgname")'.
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'Biobase'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:MatrixGenerics':
+## 
+##     rowMedians
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:matrixStats':
+## 
+##     anyMissing, rowMedians
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:phyloseq':
+## 
+##     sampleNames
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{diagdds }\OtherTok{=} \FunctionTok{phyloseq\_to\_deseq2}\NormalTok{(physeq, }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Case\_Control)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## converting counts to integer mode
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in DESeqDataSet(se, design = design, ignoreRank): some variables in
+## design formula are characters, converting to factors
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# calculate geometric means prior to estimate size factors}
+\NormalTok{gm\_mean }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(x, }\AttributeTok{na.rm=}\ConstantTok{TRUE}\NormalTok{)\{}
+  \FunctionTok{exp}\NormalTok{(}\FunctionTok{sum}\NormalTok{(}\FunctionTok{log}\NormalTok{(x[x }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{]), }\AttributeTok{na.rm=}\NormalTok{na.rm) }\SpecialCharTok{/} \FunctionTok{length}\NormalTok{(x))}
+\NormalTok{\}}
+\NormalTok{geoMeans }\OtherTok{=} \FunctionTok{apply}\NormalTok{(}\FunctionTok{counts}\NormalTok{(diagdds), }\DecValTok{1}\NormalTok{, gm\_mean)}
+\NormalTok{diagdds }\OtherTok{=} \FunctionTok{estimateSizeFactors}\NormalTok{(diagdds, }\AttributeTok{geoMeans =}\NormalTok{ geoMeans)}
+\NormalTok{diagdds }\OtherTok{=} \FunctionTok{DESeq}\NormalTok{(diagdds, }\AttributeTok{fitType=}\StringTok{"local"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## using pre-existing size factors
+\end{verbatim}
+
+\begin{verbatim}
+## estimating dispersions
+\end{verbatim}
+
+\begin{verbatim}
+## gene-wise dispersion estimates
+\end{verbatim}
+
+\begin{verbatim}
+## mean-dispersion relationship
+\end{verbatim}
+
+\begin{verbatim}
+## final dispersion estimates
+\end{verbatim}
+
+\begin{verbatim}
+## fitting model and testing
+\end{verbatim}
+
+\begin{verbatim}
+## -- replacing outliers and refitting for 1151 genes
+## -- DESeq argument 'minReplicatesForReplace' = 7 
+## -- original counts are preserved in counts(dds)
+\end{verbatim}
+
+\begin{verbatim}
+## estimating dispersions
+\end{verbatim}
+
+\begin{verbatim}
+## fitting model and testing
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{res }\OtherTok{=} \FunctionTok{results}\NormalTok{(diagdds, }\AttributeTok{cooksCutoff =} \ConstantTok{FALSE}\NormalTok{)}
+\NormalTok{alpha }\OtherTok{=} \FloatTok{0.01}
+\NormalTok{sigtab }\OtherTok{=}\NormalTok{ res[}\FunctionTok{which}\NormalTok{(res}\SpecialCharTok{$}\NormalTok{padj }\SpecialCharTok{\textless{}}\NormalTok{ alpha), ]}
+\NormalTok{sigtab }\OtherTok{=} \FunctionTok{cbind}\NormalTok{(}\FunctionTok{as}\NormalTok{(sigtab, }\StringTok{"data.frame"}\NormalTok{), }\FunctionTok{as}\NormalTok{(}\FunctionTok{tax\_table}\NormalTok{(physeq)[}\FunctionTok{rownames}\NormalTok{(sigtab), ], }\StringTok{"matrix"}\NormalTok{))}
+\FunctionTok{head}\NormalTok{(sigtab)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            baseMean log2FoldChange     lfcSE      stat       pvalue
+## 134726     5.650900       2.131322 0.5665873  3.761684 1.687732e-04
+## 193672    91.723631       1.574409 0.2337252  6.736154 1.626344e-11
+## 4439360 1081.732052       1.293402 0.2627492  4.922573 8.541366e-07
+## 306299     7.927932       1.012594 0.2723463  3.718038 2.007759e-04
+## 1142029   25.917987      -1.281228 0.2383396 -5.375638 7.631189e-08
+## 4372612   14.952956       1.153458 0.2793272  4.129415 3.636874e-05
+##                 padj     Domain.           Phylum.            Class.
+## 134726  1.740775e-03 k__Bacteria     p__Firmicutes        c__Bacilli
+## 193672  1.174221e-09 k__Bacteria     p__Firmicutes     c__Clostridia
+## 4439360 1.932538e-05 k__Bacteria  p__Bacteroidetes    c__Bacteroidia
+## 306299  2.013336e-03 k__Bacteria     p__Firmicutes     c__Clostridia
+## 1142029 2.648903e-06 k__Bacteria p__Actinobacteria c__Actinobacteria
+## 4372612 4.935757e-04 k__Bacteria  p__Bacteroidetes    c__Bacteroidia
+##                       Order.               Family.             Genus. Species
+## 134726    o__Lactobacillales   f__Lactobacillaceae   g__Lactobacillus     s__
+## 193672      o__Clostridiales     f__Clostridiaceae                g__     s__
+## 4439360     o__Bacteroidales     f__Bacteroidaceae     g__Bacteroides     s__
+## 306299      o__Clostridiales    f__Lachnospiraceae                g__     s__
+## 1142029 o__Bifidobacteriales f__Bifidobacteriaceae g__Bifidobacterium     s__
+## 4372612     o__Bacteroidales     f__Bacteroidaceae     g__Bacteroides     s__
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# library("ggplot2")}
+\FunctionTok{theme\_set}\NormalTok{(}\FunctionTok{theme\_bw}\NormalTok{())}
+\NormalTok{scale\_fill\_discrete }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(}\AttributeTok{palname =} \StringTok{"Set1"}\NormalTok{, ...) \{}
+    \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{palette =}\NormalTok{ palname, ...)}
+\NormalTok{\}}
+\CommentTok{\# Phylum order}
+\NormalTok{x }\OtherTok{=} \FunctionTok{tapply}\NormalTok{(sigtab}\SpecialCharTok{$}\NormalTok{log2FoldChange, sigtab}\SpecialCharTok{$}\NormalTok{Phylum, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{max}\NormalTok{(x))}
+\NormalTok{x }\OtherTok{=} \FunctionTok{sort}\NormalTok{(x, }\ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{sigtab}\SpecialCharTok{$}\NormalTok{Phylum }\OtherTok{=} \FunctionTok{factor}\NormalTok{(}\FunctionTok{as.character}\NormalTok{(sigtab}\SpecialCharTok{$}\NormalTok{Phylum), }\AttributeTok{levels=}\FunctionTok{names}\NormalTok{(x))}
+\CommentTok{\# Genus order}
+\NormalTok{x }\OtherTok{=} \FunctionTok{tapply}\NormalTok{(sigtab}\SpecialCharTok{$}\NormalTok{log2FoldChange, sigtab}\SpecialCharTok{$}\NormalTok{Genus, }\ControlFlowTok{function}\NormalTok{(x) }\FunctionTok{max}\NormalTok{(x))}
+\NormalTok{x }\OtherTok{=} \FunctionTok{sort}\NormalTok{(x, }\ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{sigtab}\SpecialCharTok{$}\NormalTok{Genus }\OtherTok{=} \FunctionTok{factor}\NormalTok{(}\FunctionTok{as.character}\NormalTok{(sigtab}\SpecialCharTok{$}\NormalTok{Genus), }\AttributeTok{levels=}\FunctionTok{names}\NormalTok{(x))}
+\FunctionTok{ggplot}\NormalTok{(sigtab, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Genus, }\AttributeTok{y=}\NormalTok{log2FoldChange, }\AttributeTok{color=}\NormalTok{Phylum)) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{size=}\DecValTok{6}\NormalTok{) }\SpecialCharTok{+} 
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \SpecialCharTok{{-}}\DecValTok{90}\NormalTok{, }\AttributeTok{hjust =} \DecValTok{0}\NormalTok{, }\AttributeTok{vjust=}\FloatTok{0.5}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Rmarkdown-code-assignment_files/figure-latex/deseq-1.pdf}
+
+\end{document}
