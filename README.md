@@ -1,4 +1,7 @@
-# KYAGULANYI-ALI-R-ASSIGNMENT
+# KYAGULANYI-ALI
+#REG.No: 2020/HD07/20690U
+
+
 This repository is for the R assignment 
 The following are thequestions being answered.
 MSB7102 Mini-project, Semester I, 2021
